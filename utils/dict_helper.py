@@ -108,11 +108,14 @@ class Dict(object):
                 vec += [oov_num]
         return torch.LongTensor(vec), oovs
 
-    def convertToWords(self, idx, oovs=None):
+    def convertToWords(self, idx, oovs=None, unk='<unk>'):
         words = []
         for i in idx:
             if i < self.size():
                 words += [self.getLabel(i)]
             else:
-                words.append(list(oovs.items())[i-self.size()][0])
+                if oovs is None:
+                    words.append(unk)
+                else:
+                    words.append(list(oovs.items())[i-self.size()][0])
         return words
