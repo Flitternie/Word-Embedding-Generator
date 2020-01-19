@@ -9,9 +9,9 @@ Word-Embedding-Generator is a project that generates word embeddings from raw te
 -   PyTorch
 -   NLTK
 -   Gensim
-#### Data Ready
+### Data Ready
 #### Raw Data
-Put the raw text data to be trained at a folder path. The program will automatically scan all the files in the path.
+Prepare all the raw data in a folder. The program will automatically scan all the files in the folder.
 
 #### Pre-trained Models
 
