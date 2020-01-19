@@ -28,7 +28,9 @@ please add stopwords in this file: `./stopwords`
 ```bash
 python create_embb.py --load_path ./raw_data/ --save_path ./  --lower --freq 1 --dim 300 --model_path ./word2vec.model
 ```
-- Set `--freq` to 0 to cover all words
+- Set `--freq` to k to ignore the words with frequencies less than k
+- Set `--size` for the maximum vocab size, default=500000
+- Set `--dim` for the word embedding dimension, default=100
 - Leave `--model_path` blank to train Word2Vec model from scratch using the raw data
 - Set `--model_path` to 'google' to use pre-trained Google Word2Vec model 
 - Set `--model_path` to the saved model path to load the pre-trained Word2Vec model 
