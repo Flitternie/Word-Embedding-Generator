@@ -100,10 +100,16 @@ def trainW2V(files, freq, dim):
 def makeEmbb(vocab, model, dim):
     embb = []
     for key, value in vocab.idxToWord.items():
-        try:
-            embb.append(google[value])
-        except KeyError:
-            embb.append(model[value])
+        if opt.model_path != 'google':
+            try:
+                embb.append(google[value])
+            except KeyError:
+                embb.append(model[value])
+        else:
+            try:
+                embb.append(model[value])
+            except KeyError:
+                embb.append(np.ones(dim))
     embb = np.array(embb) 
     try:
         assert embb.size == vocab.size() * dim
