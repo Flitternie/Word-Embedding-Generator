@@ -21,7 +21,7 @@ Google Word2Vec: https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/ed
 
 #### Other Files
 
-please add stopwords in this file: `./stopwords` 
+Please add stopwords in this file: `./stopwords` 
 
 ### Training Word Embedding
 
